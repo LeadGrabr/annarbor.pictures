@@ -51,9 +51,9 @@ export default class ContactForm extends Component {
                     }}
                     values={this.state}
                 >
-                    <JoifulInput fieldName="name"/>
-                    <JoifulInput fieldName="email"/>
-                    <JoifulInput fieldName="phone"/>
+                    <JoifulInput name="name"/>
+                    <JoifulInput name="email"/>
+                    <JoifulInput name="phone"/>
                     <Button
                         color="default"
                         disabled={pending}

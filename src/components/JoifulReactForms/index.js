@@ -1,8 +1,8 @@
 import TextElement from './TextElement'
 
 export default {
-    customInputElementTypes: {
-        textElement: TextElement
+    elementTypes: {
+        text: TextElement
     },
     options: {
         language: {
