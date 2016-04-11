@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const routes = [
     '/',
-    '/about/'
+    '/about/',
     '/gallery/'
 ]
 
