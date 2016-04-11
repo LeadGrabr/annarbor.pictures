@@ -1,5 +1,6 @@
 import './style.scss'
 import { Component, PropTypes } from 'react'
+// import Color from 'color'
 
 const baseColors = {
     black: '#111',
@@ -10,14 +11,15 @@ const baseColors = {
     lightBlue: '#c6d4e1',
     red: '#f52',
     orange: '#f70',
-    green: '#1c7'
+    green: '#1c7',
+    pink: '#e5b9b3'
 }
 
 const colors = {
     ...baseColors,
-    primary: baseColors.white,
+    primary: baseColors.pink,
     secondary: baseColors.lightBlue,
-    default: baseColors.black,
+    default: baseColors.white,
     info: baseColors.blue,
     success: baseColors.green,
     warning: baseColors.orange,
@@ -25,7 +27,7 @@ const colors = {
 }
 
 const scale = [0, 10, 25, 48, 64]
-const fontSizes = [64, 37, 30, 19, 18, 14, 12]
+const fontSizes = [64, 37, 27, 19, 18, 12, 11]
 
 export default class Theme extends Component {
 
@@ -48,8 +50,13 @@ export default class Theme extends Component {
                     fontWeight: 'lighter'
                 },
                 Button: {
-                    border: `1px solid ${colors.black}`,
                     color: colors.black
+                },
+                Drawer: {
+                    overflow: 'auto'
+                },
+                Input: {
+                    fontSize: fontSizes[5]
                 },
                 Label: {
                     display: 'block',
@@ -59,8 +66,11 @@ export default class Theme extends Component {
                     fontWeight: 200
                 },
                 Text: {
-                    marginBottom: scale[1],
-                    marginTop: scale[1]
+                    marginBottom: scale[2],
+                    marginTop: scale[2]
+                },
+                Textarea: {
+                    fontSize: fontSizes[5]
                 },
                 Toolbar: {
                     backgroundColor: colors.white,

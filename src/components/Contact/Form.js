@@ -5,9 +5,7 @@ import { createLead, constants } from '../../redux/modules/app'
 import autobind from 'autobind-decorator'
 import { JoifulForm, JoifulInput } from 'joiful-react-forms'
 import Joi from 'joi'
-import joiFulFormSettings from '../JoifulReactForms'
 const { SUBMIT_LEAD } = constants
-import Spinner from 'react-spinkit'
 import { Flex } from 'reflexbox'
 
 @connect(() => ({}), { submit: createLead })
@@ -41,28 +39,42 @@ export default class ContactForm extends Component {
         return (
             <Base {...props}>
                 <JoifulForm
-                    {...joiFulFormSettings}
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
                     schema={{
-                        name: Joi.string().required().label('Name'),
-                        email: Joi.string().email().required().label('Email'),
-                        phone: Joi.string().min(10).max(12).label('Phone')
+                        name: Joi.string().required(),
+                        email: Joi.string().email().required(),
+                        phone: Joi.string().min(10).max(12),
+                        message: Joi.string().min(3)
                     }}
                     values={this.state}
                 >
-                    <JoifulInput name="name"/>
-                    <JoifulInput name="email"/>
-                    <JoifulInput name="phone"/>
+                    <JoifulInput
+                        label="Name"
+                        name="name"
+                    />
+                    <JoifulInput
+                        label="Email"
+                        name="email"
+                    />
+                    <JoifulInput
+                        label="Phone"
+                        name="phone"
+                    />
+                    <JoifulInput
+                        is="textarea"
+                        label="Message"
+                        name="message"
+                    />
                     <Button
-                        color="default"
+                        backgroundColor="primary"
                         disabled={pending}
                         onClick={this.handleSubmit}
                         style={{ width: '100%' }}
                     >
                         <If condition={pending}>
                             <Flex justify="center">
-                                Processing... <Spinner spinnerName="pulse"/>
+                                Processing...
                             </Flex>
                         <Else/>
                             Submit

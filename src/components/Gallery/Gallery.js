@@ -19,38 +19,39 @@ const photos = [
     'jjj1rHyYyG0'
 ]
 
-@connect((state) => ({ width: state.app.width }))
+@connect((state) => ({ screenWidth: state.app.width }))
 
-export default class PhotoGallery extends Component {
+export default class Gallery extends Component {
+
+    static defaultProps = {
+        size: 300
+    };
 
     static propTypes = {
-        width: PropTypes.number.isRequired
+        screenWidth: PropTypes.number.isRequired,
+        size: PropTypes.number.isRequired
     };
 
     render() {
-        // const { width } = this.props
+        const { size, ...props } = this.props
         // const imgSize = width > small ? 280 : 100
         return (
-            <Base {...this.props}>
+            <Base {...props}>
                 <Flex
                     justify="center"
                     wrap
                 >
-                    <For
-                        each="photo"
-                        index="key"
-                        of={photos}
-                    >
+                    {photos.map((photo, key) =>
                         <Base
                             key={key}
                             style={{
                                 backgroundImage: `url('//source.unsplash.com/${photo}/280x280')`,
                                 backgroundSize: 'cover',
-                                height: 87,
-                                width: 87,
+                                height: size,
+                                width: size,
                             }}
                         />
-                    </For>
+                    )}
                 </Flex>
             </Base>
         )

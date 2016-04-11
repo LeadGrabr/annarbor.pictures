@@ -3,7 +3,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const routes = ['/']
+const routes = [
+    '/',
+    '/gallery/'
+]
 
 module.exports = {
 
@@ -38,6 +41,9 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: ['babel']
+            }, {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader?limit=8192'
             }, {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
@@ -76,7 +82,8 @@ module.exports = {
             'process.env': {
                 "API_ENDPOINT": JSON.stringify(process.env.API_ENDPOINT),
                 "DEVELOPMENT": true,
-                "DEVTOOLS": true
+                "DEVTOOLS": true,
+                "GOOGLE_MAPS_APIKEY": JSON.stringify(process.env.GOOGLE_MAPS_APIKEY)
             }
         }),
     ],
