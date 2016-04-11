@@ -3,7 +3,7 @@ import { Banner, Base } from 'rebass'
 import { Page } from '..'
 import { default as weddingSelfie } from './wedding-selfie.jpg'
 import { default as color } from 'color'
-import { Form } from '../Contact'
+import { Form as ContactForm } from '../Contact'
 
 const HomeBanner = (props, { rebass: { colors } }) =>
     <Banner
@@ -36,7 +36,7 @@ const HomeBanner = (props, { rebass: { colors } }) =>
                     textAlign: 'left'
                 }}
             >
-                <Form/>
+                <ContactForm theme="secondary"/>
             </Base>
         </Base>
     </Banner>

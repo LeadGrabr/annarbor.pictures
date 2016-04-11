@@ -4,17 +4,23 @@ import { Link } from 'react-router'
 
 const MainNav = () =>
     <Menu>
-        <NavItem>
-            About Us
+        <NavItem
+            is={Link}
+            to="/"
+        >
+            Home
         </NavItem>
-        <NavItem>
-            Our Photographers
+        <NavItem
+            is={Link}
+            to="/about"
+        >
+            About Us
         </NavItem>
         <NavItem
             is={Link}
             to="/gallery"
         >
-            Pictures
+            Photo Gallery
         </NavItem>
         <NavItem>
             Blog

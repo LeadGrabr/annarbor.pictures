@@ -1,18 +1,28 @@
 import React, { PropTypes } from 'react'
 import { Textarea } from 'rebass'
 
-const JoifulInputTextarea = ({ error, ...props }, { rebass: { colors } }) =>
+const JoifulInputTextarea = ({ error, theme, ...props }, { rebass: { colors } }) =>
     <Textarea
-        {...props}
+        color={theme}
         message={error}
         rounded
         style={{
-            borderColor: error ? colors.warning : 'transparent'
+            borderColor: error ? colors.error : colors[theme]
         }}
+        {...props}
     />
 
 JoifulInputTextarea.propTypes = {
-    error: PropTypes.string
+    error: PropTypes.string,
+    theme: PropTypes.oneOf([
+        'primary',
+        'secondary',
+        'default',
+        'info',
+        'success',
+        'warning',
+        'error'
+    ])
 }
 
 JoifulInputTextarea.contextTypes = {

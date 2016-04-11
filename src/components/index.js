@@ -1,3 +1,4 @@
+export { default as About } from './About/Container'
 export { default as App } from './App'
 export { default as Contact } from './Contact/Container'
 export { default as DevTools } from './DevTools'

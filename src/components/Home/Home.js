@@ -2,7 +2,7 @@ import { default as React } from 'react'
 import { Base, Heading, Text } from 'rebass'
 import { Page, GoogleMap } from '..'
 import { default as Banner } from './Banner'
-import { Gallery } from '../Gallery'
+import { default as Gallery } from '../Gallery'
 
 const Home = () =>
     <Page>

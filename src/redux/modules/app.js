@@ -20,7 +20,7 @@ const intitialState = {
     width: 0
 }
 
-export function setScreenSize(height, width) {
+export function setScreenSize({ height, width }) {
     return {
         type: SCREEN_DIMENSIONS,
         payload: {

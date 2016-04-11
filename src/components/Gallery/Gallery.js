@@ -28,12 +28,14 @@ export default class Gallery extends Component {
     };
 
     static propTypes = {
+        count: PropTypes.number,
+        imgProps: PropTypes.object,
         screenWidth: PropTypes.number.isRequired,
         size: PropTypes.number.isRequired
     };
 
     render() {
-        const { size, ...props } = this.props
+        const { count, imgProps, size, ...props } = this.props
         // const imgSize = width > small ? 280 : 100
         return (
             <Base {...props}>
@@ -41,17 +43,26 @@ export default class Gallery extends Component {
                     justify="center"
                     wrap
                 >
-                    {photos.map((photo, key) =>
-                        <Base
-                            key={key}
-                            style={{
-                                backgroundImage: `url('//source.unsplash.com/${photo}/280x280')`,
-                                backgroundSize: 'cover',
-                                height: size,
-                                width: size,
-                            }}
-                        />
-                    )}
+                    {photos.map((photo, key) => {
+                        if (key >= count) {
+                            return null
+                        }
+
+                        return (
+                            <Base
+                                key={key}
+                                style={{
+                                    backgroundImage: `
+                                        url('//source.unsplash.com/${photo}/${size}x${size}')
+                                    `,
+                                    backgroundSize: 'cover',
+                                    height: size,
+                                    width: size,
+                                }}
+                                {...imgProps}
+                            />
+                        )
+                    })}
                 </Flex>
             </Base>
         )

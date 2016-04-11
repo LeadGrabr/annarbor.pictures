@@ -3,10 +3,11 @@ import { Input } from 'rebass'
 
 const JoifulInputTextInput = ({ error, theme, ...props }, { rebass: { colors } }) =>
     <Input
+        color={theme}
         message={error}
         rounded
         style={{
-            borderColor: error ? colors.warning : 'transparent'
+            borderColor: error ? colors.error : colors[theme]
         }}
         type="text"
         {...props}

@@ -3,7 +3,7 @@ import { Component, PropTypes } from 'react'
 // import Color from 'color'
 
 const baseColors = {
-    black: '#111',
+    black: '#333',
     white: '#fff',
     gray: '#ddd',
     midgray: '#888',
@@ -18,16 +18,16 @@ const baseColors = {
 const colors = {
     ...baseColors,
     primary: baseColors.pink,
-    secondary: baseColors.lightBlue,
-    default: baseColors.white,
+    secondary: baseColors.white,
+    default: baseColors.black,
     info: baseColors.blue,
     success: baseColors.green,
     warning: baseColors.orange,
-    error: baseColors.red
+    error: baseColors.pink
 }
 
 const scale = [0, 10, 25, 48, 64]
-const fontSizes = [64, 37, 27, 19, 18, 12, 11]
+const fontSizes = [64, 37, 27, 19, 18, 14, 12]
 
 export default class Theme extends Component {
 
@@ -66,6 +66,7 @@ export default class Theme extends Component {
                     fontWeight: 200
                 },
                 Text: {
+                    fontSize: fontSizes[5],
                     marginBottom: scale[2],
                     marginTop: scale[2]
                 },

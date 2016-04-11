@@ -9,6 +9,10 @@ export default (
     >
         <IndexRoute component={views.Home}/>
         <Route
+            component={views.About}
+            path="/about"
+        />
+        <Route
             component={views.Gallery}
             path="/gallery"
         />

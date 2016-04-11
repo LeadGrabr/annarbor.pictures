@@ -1,8 +1,11 @@
 import { default as React, Component, PropTypes } from 'react'
-import { Close, Drawer, Fixed, NavItem, Toolbar } from 'rebass'
+import { Drawer, Fixed, NavItem, Toolbar } from 'rebass'
 import { IndexLink } from 'react-router'
 import { Flex } from 'reflexbox'
 import { MainNav } from '.'
+import { default as Close } from 'react-icons/lib/md/close'
+import { default as Menu } from 'react-icons/lib/md/menu'
+
 
 export default class Navbar extends Component {
 
@@ -15,19 +18,32 @@ export default class Navbar extends Component {
     render() {
         const { rebass: { colors } } = this.context
         const { drawer } = this.state
+        const iconSize = 20
         return (
             <Fixed style={{ width: '100%' }}>
                 <Toolbar>
                     <Flex
+                        align="center"
                         justify="center"
                         style={{
                             width: '100%'
                         }}
                     >
+                        <Menu
+                            onClick={() => this.setState({ drawer: true })}
+                            size={iconSize}
+                            style={{
+                                marginTop: (iconSize / 2) * -1,
+                                position: 'absolute',
+                                top: '50%'
+                            }}
+                        />
                         <NavItem
                             is={IndexLink}
-                            onClick={() => this.setState({ drawer: true })}
-                            style={{ fontWeight: 600 }}
+                            style={{
+                                fontWeight: 600,
+                                margin: 'auto'
+                            }}
                             to="/"
                         >
                             AnnArbor Pictures
@@ -40,8 +56,14 @@ export default class Navbar extends Component {
                         }}
                         width="100%"
                     >
-                        <Flex justify="flex-end">
-                            <Close onClick={() => this.setState({ drawer: false })}/>
+                        <Flex
+                            justify="flex-end"
+                            mb={2}
+                        >
+                            <Close
+                                onClick={() => this.setState({ drawer: false })}
+                                size={iconSize}
+                            />
                         </Flex>
                         <MainNav/>
                     </Drawer>

@@ -1,1 +1,2 @@
-export { default as Gallery } from './Gallery'
+import { default as Gallery } from './Gallery'
+export default Gallery

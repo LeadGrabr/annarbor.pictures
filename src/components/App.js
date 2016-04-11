@@ -31,10 +31,16 @@ export default class App extends Component {
     componentDidMount() {
         // 🌎
         const { screenSize } = this.props
-        const height = $(window).height()
-        const width = $(window).width()
-        window.addEventListener('resize', () => screenSize(height, width))
-        screenSize(height, width)
+        window.addEventListener('resize', () =>
+            screenSize({
+                height: $(window).height(),
+                width: $(window).width()
+            })
+        )
+        screenSize({
+            height: $(window).height(),
+            width: $(window).width()
+        })
     }
 
     render() {

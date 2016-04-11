@@ -14,7 +14,20 @@ export default class ContactForm extends Component {
 
     static propTypes = {
         statuses: PropTypes.object.isRequired,
-        submit: PropTypes.func.isRequired
+        submit: PropTypes.func.isRequired,
+        theme: PropTypes.oneOf([
+            'primary',
+            'secondary',
+            'default',
+            'info',
+            'success',
+            'warning',
+            'error'
+        ])
+    };
+
+    static defaultProps = {
+        theme: 'default'
     };
 
     state = {}
@@ -34,8 +47,9 @@ export default class ContactForm extends Component {
     }
 
     render() {
-        const { statuses, ...props } = this.props
+        const { statuses, theme, ...props } = this.props
         const pending = statuses[SUBMIT_LEAD] === 'pending'
+        const inputProps = { theme }
         return (
             <Base {...props}>
                 <JoifulForm
@@ -50,18 +64,22 @@ export default class ContactForm extends Component {
                     values={this.state}
                 >
                     <JoifulInput
+                        {...inputProps}
                         label="Name"
                         name="name"
                     />
                     <JoifulInput
+                        {...inputProps}
                         label="Email"
                         name="email"
                     />
                     <JoifulInput
+                        {...inputProps}
                         label="Phone"
                         name="phone"
                     />
                     <JoifulInput
+                        {...inputProps}
                         is="textarea"
                         label="Message"
                         name="message"
