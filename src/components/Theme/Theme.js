@@ -7,8 +7,7 @@ const baseColors = {
     white: '#fff',
     gray: '#ddd',
     midgray: '#888',
-    blue: '#44749d',
-    lightBlue: '#c6d4e1',
+    blue: '#cfdbed',
     red: '#f52',
     orange: '#f70',
     green: '#1c7',
@@ -61,6 +60,9 @@ export default class Theme extends Component {
                 Label: {
                     display: 'block',
                     marginBottom: 10
+                },
+                Menu: {
+                    borderColor: 'transparent'
                 },
                 NavItem: {
                     fontWeight: 200

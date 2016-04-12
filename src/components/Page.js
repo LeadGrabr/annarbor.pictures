@@ -61,7 +61,8 @@ const Content = ({ children }) =>
     </Container>
 
 Content.propTypes = {
-    ...sharedPropTypes
+    ...sharedPropTypes,
+    fluid: PropTypes.bool
 }
 
 Page.Content = Content

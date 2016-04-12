@@ -3,7 +3,10 @@ import { Menu, NavItem } from 'rebass'
 import { Link } from 'react-router'
 
 const MainNav = () =>
-    <Menu>
+    <Menu
+        backgroundColor="default"
+        color="secondary"
+    >
         <NavItem
             is={Link}
             to="/"

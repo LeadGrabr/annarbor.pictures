@@ -50,6 +50,8 @@ export default class Navbar extends Component {
                         </NavItem>
                     </Flex>
                     <Drawer
+                        backgroundColor="secondary"
+                        color="primary"
                         open={drawer}
                         style={{
                             color: colors.black
