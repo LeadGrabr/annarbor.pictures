@@ -36,7 +36,6 @@ export default class Gallery extends Component {
 
     render() {
         const { count, imgProps, size, ...props } = this.props
-        // const imgSize = width > small ? 280 : 100
         return (
             <Base {...props}>
                 <Flex
@@ -51,6 +50,7 @@ export default class Gallery extends Component {
                         return (
                             <Base
                                 key={key}
+                                m={1}
                                 style={{
                                     backgroundImage: `
                                         url('//source.unsplash.com/${photo}/${size}x${size}')

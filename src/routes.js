@@ -13,6 +13,10 @@ export default (
             path="/about"
         />
         <Route
+            component={views.Contact}
+            path="/contact"
+        />
+        <Route
             component={views.Gallery}
             path="/gallery"
         />

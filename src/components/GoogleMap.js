@@ -100,6 +100,11 @@ export default class _GoogleMap extends Component {
                         defaultCenter={{ lat: 42.280826, lng: -83.743038 }}
                         defaultZoom={10}
                         onClick={::this.handleMapClick}
+                        options={{
+                            mapTypeControl: false,
+                            streetViewControl: false,
+                            zoomControl: false
+                        }}
                         ref={(map) =>
                             (this._googleMapComponent = map) &&
                             console.log(map.getZoom())

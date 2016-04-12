@@ -28,7 +28,10 @@ const MainNav = () =>
         <NavItem>
             Blog
         </NavItem>
-        <NavItem>
+        <NavItem
+            is={Link}
+            to="/contact"
+        >
             Contact
         </NavItem>
     </Menu>

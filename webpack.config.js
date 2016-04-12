@@ -1,3 +1,4 @@
+const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
@@ -6,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const routes = [
     '/',
     '/about/',
+    '/contact/',
     '/gallery/'
 ]
 
@@ -14,7 +16,7 @@ module.exports = {
     devtool: 'source-map',
 
     entry: {
-        main: __dirname + '/src/index.js'
+        main: path.resolve('./src/index.js')
     },
 
     output: {
@@ -56,9 +58,14 @@ module.exports = {
     },
 
     resolve: {
-        moduleDirectories: [
-            __dirname + '/src',
-            __dirname + '/node_modules'
+        root: [
+            path.resolve('./src'),
+            path.resolve('./node_modules')
+        ],
+        modulesDirectories: [
+            'src',
+            'src/components',
+            'node_modules'
         ],
         extensions: ['', '.js', '.jsx', '.json']
     },
