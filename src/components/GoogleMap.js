@@ -102,6 +102,7 @@ export default class _GoogleMap extends Component {
                         onClick={::this.handleMapClick}
                         options={{
                             mapTypeControl: false,
+                            scrollwheel: false,
                             streetViewControl: false,
                             zoomControl: false
                         }}
