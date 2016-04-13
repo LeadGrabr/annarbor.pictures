@@ -5,6 +5,7 @@ import { createLead, constants } from '../../redux/modules/app'
 import autobind from 'autobind-decorator'
 import { JoifulForm, JoifulInput } from 'joiful-react-forms'
 import Joi from 'joi'
+import { default as joiFulFormSettings, phone } from '../JoifulReactForms'
 const { SUBMIT_LEAD } = constants
 import { Flex } from 'reflexbox'
 
@@ -58,8 +59,8 @@ export default class ContactForm extends Component {
                     schema={{
                         name: Joi.string().required(),
                         email: Joi.string().email().required(),
-                        phone: Joi.string().min(10).max(12),
-                        message: Joi.string().min(3)
+                        phone: phone.label('Phone'),
+message: Joi.string().min(3)
                     }}
                     values={this.state}
                 >
