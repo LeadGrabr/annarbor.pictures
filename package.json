@@ -70,7 +70,8 @@
     "start": "npm run start-dev",
     "dev": "better-npm-run start-dev",
     "build-dev": "better-npm-run build-dev",
-    "deploy-dev": "aws s3 sync ./dist s3://annarbor.pictures --exclude '.DS_Store' --profile leadgrabr"
+    "deploy-dev": "aws s3 sync ./dist s3://annarbor.pictures --exclude '.DS_Store' --profile leadgrabr",
+    "lint": "eslint -c .eslintrc src"
   },
   "betterScripts": {
     "start-dev": {
