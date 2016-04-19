@@ -3,7 +3,15 @@ import { Base, Heading, Section, SectionHeader, Text } from 'rebass'
 import { BottomBar, Page, GoogleMap } from 'components'
 import { default as Banner } from './Banner'
 import { default as Gallery } from 'Gallery'
-import { default as About } from 'About'
+import { default as Testimonials } from '@leadgrabr/testimonials'
+import { default as headshotOne } from './headshot-one.jpg'
+import { default as headshotTwo } from './headshot-two.jpg'
+
+const testimonialText = `
+    Wisi magna pri ei, equidem tibique an eum, per te quod similique.
+    Ne quas malorum labitur eos, nam ei impetus veritus. Ex dico diceret
+    ancillae duo. Vel legendos pericula ea, per esse rationibus ut.
+`
 
 const Home = (props, { rebass: { colors } }) =>
     <Page>
@@ -35,10 +43,22 @@ const Home = (props, { rebass: { colors } }) =>
         <Section style={{ backgroundColor: colors.info }}>
             <Page.Content>
                 <SectionHeader
-                    heading="Some other alternate heading"
+                    heading="Customer Testimonials"
                     style={{ textAlign: 'center' }}
                 />
-                <About/>
+                <Testimonials
+                    testimonials={[
+                        {
+                            img: headshotOne,
+                            name: 'John Appleseed',
+                            text: testimonialText
+                        }, {
+                            img: headshotTwo,
+                            name: 'Barbara Foo',
+                            text: testimonialText
+                        }
+                    ]}
+                />
             </Page.Content>
         </Section>
         <Base>
