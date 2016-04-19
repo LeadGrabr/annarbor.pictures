@@ -57,6 +57,9 @@ export default class HomeBanner extends Component {
                         }}
                     >
                         <LeadForm
+                            buttonProps={{
+                                theme: 'primary'
+                            }}
                             status={statuses[SUBMIT_LEAD]}
                             submit={submit}
                             theme="secondary"
