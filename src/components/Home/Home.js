@@ -17,8 +17,12 @@ const Home = (props, { rebass: { colors } }) =>
                 Fall in Love with Ann Arbor Pictures!
             </Heading>
             <Text style={{ textAlign: 'center' }}>
-                Check out some of the latest and greatest
-                photographs from photographers right here in Ann Arbor.
+                Whether you're planning an engagement,
+                need lifestyle photography, or are just
+                looking to document your latest adventures,
+                Ann Arbor Pictures has the equipment and
+                the expertise to get you your perfect
+                image in a unique vintage style.
             </Text>
             <Gallery
                 count={6}
