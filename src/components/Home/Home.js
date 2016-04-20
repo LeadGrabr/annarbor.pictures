@@ -6,6 +6,10 @@ import { default as Gallery } from 'Gallery'
 import { default as Testimonials } from '@leadgrabr/testimonials'
 import { default as headshotOne } from './headshot-one.jpg'
 import { default as headshotTwo } from './headshot-two.jpg'
+import { default as BrandBadges } from '@leadgrabr/brand-badges'
+import { default as Heart } from 'react-icons/lib/go/heart'
+import { default as Organization } from 'react-icons/lib/go/organization'
+import { default as Location } from 'react-icons/lib/go/location'
 
 const testimonialText = `
     Wisi magna pri ei, equidem tibique an eum, per te quod similique.
@@ -44,7 +48,6 @@ const Home = (props, { rebass: { colors } }) =>
             <Page.Content>
                 <SectionHeader
                     heading="Customer Testimonials"
-                    style={{ textAlign: 'center' }}
                 />
                 <Testimonials
                     testimonials={[
@@ -56,6 +59,31 @@ const Home = (props, { rebass: { colors } }) =>
                             img: headshotTwo,
                             name: 'Barbara Foo',
                             text: testimonialText
+                        }
+                    ]}
+                />
+            </Page.Content>
+        </Section>
+        <Section>
+            <Page.Content>
+                <SectionHeader
+                    heading="Why We're Great"
+                />
+                <BrandBadges
+                    color="secondary"
+                    backgroundColor="primary"
+                    badges={[
+                        {
+                            icon: Heart,
+                            heading: 'You\'ll love your photos'
+                        },
+                        {
+                            icon: Organization,
+                            heading: 'Our organization is strong!'
+                        },
+                        {
+                            icon: Location,
+                            heading: 'We\'re local!'
                         }
                     ]}
                 />
