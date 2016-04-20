@@ -70,7 +70,6 @@ const Home = (props, { rebass: { colors } }) =>
                     heading="Why We're Great"
                 />
                 <BrandBadges
-                    color="secondary"
                     backgroundColor="primary"
                     badges={[
                         {
@@ -86,6 +85,7 @@ const Home = (props, { rebass: { colors } }) =>
                             heading: 'We\'re local!'
                         }
                     ]}
+                    color="secondary"
                 />
             </Page.Content>
         </Section>
