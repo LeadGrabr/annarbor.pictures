@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "dependencies": {},
   "devDependencies": {
-    "@leadgrabr/brand-badges": "0.0.3",
+    "@leadgrabr/brand-badges": "0.0.5",
     "@leadgrabr/gallery": "0.0.5",
     "@leadgrabr/lead-form": "0.0.8",
     "@leadgrabr/testimonials": "0.0.4",
