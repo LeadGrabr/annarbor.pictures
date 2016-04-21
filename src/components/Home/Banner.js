@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import { default as React, Component, PropTypes } from 'react'
-import { Banner, Base, Text, Heading } from 'rebass'
+import { Banner, Base, Heading, Text } from 'rebass'
 import { default as weddingSelfie } from './wedding-selfie.jpg'
 import { default as color } from 'color'
 import { default as LeadForm } from '@leadgrabr/lead-form'
@@ -8,7 +8,6 @@ import { connect } from 'redux-await'
 import { constants, createLead } from 'redux/modules/app'
 const { SUBMIT_LEAD } = constants
 import { Flex, Box } from 'reflexbox'
-import { Page } from 'components'
 
 @connect(
     ({ app: { width } }) => ({ width }),
@@ -25,7 +24,7 @@ export default class HomeBanner extends Component {
     static propTypes = {
         statuses: PropTypes.object.isRequired,
         submit: PropTypes.func.isRequired,
-        width: PropTypes.string.isRequired
+        width: PropTypes.number.isRequired
     };
 
     state = {
@@ -74,12 +73,12 @@ export default class HomeBanner extends Component {
                             width: boxWidth
                         }}
                     >
-                        <Page.Title>
+                        <Heading level={1}>
                             30 years of Experience Combine<br/>
                             to Get you the Perfect Shot
-                        </Page.Title>
+                        </Heading>
                         <Text>
-                            Our photographers have over 40 years of
+                            Our photographers have over 30 years of
                             combined experience to help get you the
                             perfect shot.
                         </Text>

@@ -18,7 +18,7 @@ const { SUBMIT_LEAD } = constants
     { submit: createLead }
 )
 
-export default class Container extends Component {
+export default class AboutContainer extends Component {
 
     static propTypes = {
         statuses: PropTypes.object.isRequired,
@@ -30,8 +30,9 @@ export default class Container extends Component {
         const { statuses, submit, width } = this.props
         const contactBoxProps = {
             mb: 2,
-            px: 2,
-            col: width >= medium ? 6 : 12
+            style: {
+                width: width > medium ? '50%' : '100%'
+            }
         }
         return (
             <Page>
@@ -39,7 +40,7 @@ export default class Container extends Component {
                     About Ann Arbor Pictures
                 </Page.Title>
                 <Page.Content>
-                    <Section px={4}>
+                    <Section>
                         <About/>
                     </Section>
                     <Section>
@@ -48,44 +49,24 @@ export default class Container extends Component {
                                 m: 2 // eslint-disable-line id-length
                             }}
                             photos={[
-                                '51QcRqMjy6w',
-                                'v3QeAZjxxtY',
-                                'EeDaZ4So3R0'
+                                'C7gNqbkKOtE',
+                                'm5lNqXBBIy0',
+                                'yB-fV93YL54',
+                                '7bVMdNYzH_8'
                             ]}
-                            size={260}
+                            size={150}
                         />
                     </Section>
                     <Section>
-                        <SectionHeader
-                            heading="Contact us today"
-                            style={{ textAlign: 'center' }}
-                        />
                         <Flex column={!(width > medium)}>
-                            <Box {...contactBoxProps}>
-                                <LeadForm
-                                    status={statuses[SUBMIT_LEAD]}
-                                    submit={submit}
-                                />
-                            </Box>
-                            <Box {...contactBoxProps}>
-                                <Gallery
-                                    count={width >= medium ? 8 : 10}
-                                    my={3}
-                                    photos={[
-                                        '51QcRqMjy6w',
-                                        'v3QeAZjxxtY',
-                                        'EeDaZ4So3R0',
-                                        'bNGdS51jAoE',
-                                        '70RHiKO9kj8',
-                                        'C7gNqbkKOtE',
-                                        'm5lNqXBBIy0',
-                                        'yB-fV93YL54',
-                                        '7bVMdNYzH_8',
-                                        '_BLx6ystEhk',
-                                        'pcbuJpqHUak',
-                                        'jjj1rHyYyG0'
-                                    ]}
-                                    size={50}
+                            <Box
+                                {...contactBoxProps}
+                                pr={width > medium ? 2 : 0}
+                            >
+                                <SectionHeader
+                                    heading="Contact us today"
+                                    m={0}
+                                    style={{ textAlign: 'left' }}
                                 />
                                 <Text>
                                     Et his feugait denique appellantur. Meis euismod no mel, at
@@ -105,6 +86,15 @@ export default class Container extends Component {
                                     putant expetenda deterruisset, te mutat tempor neglegentur
                                     his. At modo facer ubique sea, te vidit latine eleifend eam.
                                 </Text>
+                            </Box>
+                            <Box
+                                {...contactBoxProps}
+                                pl={width > medium ? 2 : 0}
+                            >
+                                <LeadForm
+                                    status={statuses[SUBMIT_LEAD]}
+                                    submit={submit}
+                                />
                             </Box>
                         </Flex>
                     </Section>

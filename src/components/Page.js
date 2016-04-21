@@ -26,7 +26,7 @@ const Title = ({ children }) =>
     <Heading
         level={1}
         mb={1}
-        mt={1}
+        mt={4}
         style={{ textAlign: 'center' }}
     >
         {children}
@@ -54,7 +54,6 @@ Page.Subtitle = Subtitle
 
 const Content = ({ children }) =>
     <Container
-        my={3}
         px={2}
     >
         {children}
