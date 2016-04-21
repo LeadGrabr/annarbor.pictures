@@ -5,7 +5,7 @@ import { Page } from 'components'
 import { default as LeadForm } from '@leadgrabr/lead-form'
 import { Section, SectionHeader, Text } from 'rebass'
 import { Flex, Box } from 'reflexbox'
-import { default as Gallery } from 'Gallery'
+import { default as Gallery } from '@leadgrabr/gallery'
 import { connect } from 'redux-await'
 import { constants, createLead } from 'redux/modules/app'
 const { medium } = constants.BREAKPOINTS
@@ -44,10 +44,14 @@ export default class Container extends Component {
                     </Section>
                     <Section>
                         <Gallery
-                            count={3}
                             imgProps={{
                                 m: 2 // eslint-disable-line id-length
                             }}
+                            photos={[
+                                '51QcRqMjy6w',
+                                'v3QeAZjxxtY',
+                                'EeDaZ4So3R0'
+                            ]}
                             size={260}
                         />
                     </Section>
@@ -67,6 +71,20 @@ export default class Container extends Component {
                                 <Gallery
                                     count={width >= medium ? 8 : 10}
                                     my={3}
+                                    photos={[
+                                        '51QcRqMjy6w',
+                                        'v3QeAZjxxtY',
+                                        'EeDaZ4So3R0',
+                                        'bNGdS51jAoE',
+                                        '70RHiKO9kj8',
+                                        'C7gNqbkKOtE',
+                                        'm5lNqXBBIy0',
+                                        'yB-fV93YL54',
+                                        '7bVMdNYzH_8',
+                                        '_BLx6ystEhk',
+                                        'pcbuJpqHUak',
+                                        'jjj1rHyYyG0'
+                                    ]}
                                     size={50}
                                 />
                                 <Text>

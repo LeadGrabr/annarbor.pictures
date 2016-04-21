@@ -2,7 +2,7 @@ import { default as React, PropTypes } from 'react'
 import { Base, Heading, Section, SectionHeader, Text } from 'rebass'
 import { BottomBar, Page, GoogleMap } from 'components'
 import { default as Banner } from './Banner'
-import { default as Gallery } from 'Gallery'
+import { default as Gallery } from '@leadgrabr/gallery'
 import { default as Testimonials } from '@leadgrabr/testimonials'
 import { default as headshotOne } from './headshot-one.jpg'
 import { default as headshotTwo } from './headshot-two.jpg'
@@ -37,10 +37,17 @@ const Home = (props, { rebass: { colors } }) =>
                 image in a unique vintage style.
             </Text>
             <Gallery
-                count={6}
                 imgProps={{
                     m: 2 // eslint-disable-line id-length
                 }}
+                photos={[
+                    '51QcRqMjy6w',
+                    'v3QeAZjxxtY',
+                    'EeDaZ4So3R0',
+                    'bNGdS51jAoE',
+                    '70RHiKO9kj8',
+                    'C7gNqbkKOtE',
+                ]}
                 size={250}
             />
         </Page.Content>
