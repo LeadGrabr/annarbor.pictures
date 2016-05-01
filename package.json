@@ -82,7 +82,7 @@
     "start-dev": {
       "command": "webpack-dev-server --progress --hot --colors --history-api-fallback --display-error-details",
       "env": {
-        "AUDIENCE": "570e3a7c6352af5792027c25",
+        "AUDIENCE": "57150c386a61fb8258af5194",
         "API_ENDPOINT": "http://api.leadgrabr.com/api/v1",
         "BABEL_ENV": "development",
         "DEVELOPMENT": true,
@@ -93,7 +93,7 @@
     "build-prod": {
       "command": "webpack -p",
       "env": {
-        "AUDIENCE": "570e3a7c6352af5792027c25",
+        "AUDIENCE": "57150c386a61fb8258af5194",
         "API_ENDPOINT": "http://api.leadgrabr.com/api/v1",
         "BABEL_ENV": "production",
         "NODE_ENV": "production",
