@@ -60,7 +60,38 @@ export default class App extends Component {
                     ]}
                     script={[
                         { src: '//code.jquery.com/jquery-2.1.4.min.js' },
-                        { src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.min.js' }
+                        { src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.min.js' },
+                        { type: 'application/ld+json', innerHTML: `{
+                          "@context": "http://www.schema.org",
+                          "@type": "ProfessionalService",
+                          "name": "Ann Arbor Pictures",
+                          "url": "http://annarbor.pictures",
+                          "description": "Wedding and event photographers that cater to you and your style. Ann Arbor Pictures is the Washtenaw leader in wedding photography and video.",
+                          "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "847 Sumpter Road #411",
+                            "addressLocality": "Belleville",
+                            "addressRegion": "MI",
+                            "postalCode": "48111",
+                            "addressCountry": "US"
+                          },
+                          "openingHours": "Mo, Tu, We, Th, Fr, Sa, Su 08:00-22:00",
+                          "priceRange": "$$",
+                          "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "5",
+                            "reviewCount": "12"
+                          },
+                          "contactPoint": {
+                            "@type": "ContactPoint",
+                            "telephone": "734-887-1188"
+                          },
+                          "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": "42.195199",
+                            "longitude": "-83.483737"
+                          },
+                        }` }
                         /* eslint-enable max-len */
                     ]}
                     title="Ann Arbor Pictures"
