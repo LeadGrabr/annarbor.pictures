@@ -76,6 +76,7 @@
     "dev": "better-npm-run start-dev",
     "build-prod": "better-npm-run build-prod",
     "deploy-prod": "npm run build-prod; aws s3 sync ./dist s3://annarbor.pictures --exclude '.DS_Store' --profile leadgrabr",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E1T8WL0W3X29CO --invalidation-batch '{\"Paths\": {\"Quantity\": 1,\"Items\": [\"/*\"]},\"CallerReference\": \"string\"}' --profile leadgrabr",
     "lint": "eslint -c .eslintrc src"
   },
   "betterScripts": {
