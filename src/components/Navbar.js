@@ -29,6 +29,9 @@ export default class Navbar extends Component {
         const { width } = this.props
         const iconSize = 17
         const isMobile = !(width > small)
+        if (!width) {
+            return null
+        }
         return (
             <Fixed style={{ width: '100%' }}>
                 <Toolbar

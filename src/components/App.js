@@ -3,8 +3,9 @@ import { Theme } from '.'
 import { default as Helmet } from 'react-helmet'
 import { setScreenSize } from '../redux/modules/app'
 import { connect } from 'react-redux'
-import GoogleAnalytics from 'react-g-analytics'
+import { default as GoogleAnalytics } from 'react-g-analytics'
 import { default as joifulReactForms } from './JoifulReactForms'
+import { colors } from './Theme/Theme'
 
 @connect(() => ({}), { screenSize: setScreenSize })
 
@@ -16,11 +17,16 @@ export default class App extends Component {
     };
 
     static childContextTypes = {
+        betterReactSpinkit: PropTypes.object,
         joifulReactForms: PropTypes.object
     };
 
     getChildContext() {
         return {
+            betterReactSpinkit: {
+                color: colors.primary,
+                size: 40
+            },
             joifulReactForms: {
                 JoifulInput: {
                     types: joifulReactForms.types
@@ -34,13 +40,13 @@ export default class App extends Component {
         const { screenSize } = this.props
         window.addEventListener('resize', () =>
             screenSize({
-                height: $(window).height(),
-                width: $(window).width()
+                height: window.innerHeight || $(window).height(),
+                width: window.innerWidth || $(window).width()
             })
         )
         screenSize({
-            height: $(window).height(),
-            width: $(window).width()
+            height: window.innerHeight || $(window).height(),
+            width: window.innerWidth || $(window).width()
         })
     }
 
