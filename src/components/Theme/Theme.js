@@ -14,7 +14,7 @@ const baseColors = {
     pink: '#e5b9b3'
 }
 
-const colors = {
+export const colors = {
     ...baseColors,
     primary: baseColors.pink,
     secondary: baseColors.white,
