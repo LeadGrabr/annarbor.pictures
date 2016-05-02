@@ -1,26 +1,21 @@
 import { default as React } from 'react'
-import { Menu, NavItem } from 'rebass'
+import { NavItem } from 'rebass'
 import { Link } from 'react-router'
+import { Flex } from 'reflexbox'
 
 const MainNav = (props) =>
-    <Menu {...props}>
-        <NavItem
-            is={Link}
-            to="/"
-        >
-            Home
-        </NavItem>
+    <Flex {...props}>
         <NavItem
             is={Link}
             to="/about"
         >
-            About Us
+            About
         </NavItem>
         <NavItem
             is={Link}
             to="/gallery"
         >
-            Photo Gallery
+            Gallery
         </NavItem>
         <NavItem
             is={Link}
@@ -28,6 +23,6 @@ const MainNav = (props) =>
         >
             Contact
         </NavItem>
-    </Menu>
+    </Flex>
 
 export default MainNav

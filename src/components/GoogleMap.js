@@ -46,7 +46,6 @@ export default class _GoogleMap extends Component {
     }
 
     handleWindowResize() {
-        console.log('handleWindowResize', this.map)
         triggerEvent(this.map, 'resize')
     }
 
@@ -107,10 +106,9 @@ export default class _GoogleMap extends Component {
                             streetViewControl: false,
                             zoomControl: false
                         }}
-                        ref={(map) =>
-                            (this.map = map) &&
-                            console.log(map.getZoom())
-                        }
+                        ref={(map) => {
+                            this.map = map
+                        }}
                     >
                     {this.state.markers.map((marker, index) =>
                         <Marker
