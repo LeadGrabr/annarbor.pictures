@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "webpack.config.js",
-  "dependencies": {
-    "react-g-analytics": "^0.2.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@leadgrabr/brand-badges": "0.0.5",
     "@leadgrabr/gallery": "0.0.5",
@@ -46,6 +44,7 @@
     "react": "^15.0.1",
     "react-addons-update": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-g-analytics": "^0.2.6",
     "react-google-maps": "^4.9.1",
     "react-helmet": "^3.0.2",
     "react-icons": "^2.0.1",
@@ -66,6 +65,7 @@
     "sass-loader": "^3.2.0",
     "scroll-behavior": "^0.4.0",
     "serialize-javascript": "^1.2.0",
+    "sitemap-webpack-plugin": "^0.1.0",
     "static-site-generator-webpack-plugin": "^2.0.1",
     "superagent": "^1.8.3",
     "url-loader": "^0.5.7",
