@@ -72,10 +72,10 @@ module.exports = {
     },
 
     node: {
-        net : 'empty',
-        tls : 'empty',
+        net: 'empty',
+        tls: 'empty',
         crypto: 'empty',
-        dns : 'empty'
+        dns: 'empty'
     },
 
     plugins: [
