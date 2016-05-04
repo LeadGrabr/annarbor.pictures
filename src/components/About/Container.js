@@ -7,18 +7,20 @@ import { Section, SectionHeader, Text } from 'rebass'
 import { Flex, Box } from 'reflexbox'
 import { default as Gallery } from '@leadgrabr/gallery'
 import { connect } from 'redux-await'
-import { constants, createLead } from 'redux/modules/app'
-const { medium } = constants.BREAKPOINTS
-const { SUBMIT_LEAD } = constants
+import { SUBMIT_LEAD, submitLead } from 'redux/modules/app'
 
 @connect(
     (state) => ({
         width: state.app.width
     }),
-    { submit: createLead }
+    { submit: submitLead }
 )
 
 export default class AboutContainer extends Component {
+
+    static contextTypes = {
+        breakpoints: PropTypes.object.isRequired
+    };
 
     static propTypes = {
         statuses: PropTypes.object.isRequired,
@@ -27,6 +29,7 @@ export default class AboutContainer extends Component {
     };
 
     render() {
+        const { medium } = this.context.breakpoints
         const { statuses, submit, width } = this.props
         const contactBoxProps = {
             mb: 2,

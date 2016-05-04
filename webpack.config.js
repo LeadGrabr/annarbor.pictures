@@ -9,7 +9,10 @@ const routes = [
     '/',
     '/about/',
     '/contact/',
-    '/gallery/'
+    '/gallery/',
+    '/testimonials/barbara',
+    '/testimonials/joe',
+    '/testimonials/john'
 ]
 
 module.exports = {
@@ -22,7 +25,7 @@ module.exports = {
 
     output: {
         filename: 'package.js',
-        path: __dirname + '/dist',
+        path: path.resolve('./dist'),
         libraryTarget: 'umd'
     },
 
@@ -30,14 +33,14 @@ module.exports = {
         preLoaders: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                include: /src/,
                 loader: "eslint-loader"
             }
         ],
         loaders: [
             {
-                //this tests for these specific node modules which are not transpiled already
-                //and transpiles them for us
+                // this tests for these specific node modules which are not transpiled already
+                // and transpiles them for us
                 test: /\/node_modules\/(joi\/lib\/|isemail\/lib\/|hoek\/lib\/|topo\/lib\/)/,
                 loader: 'babel'
             },
@@ -45,13 +48,16 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: ['babel']
-            }, {
+            },
+            {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=8192'
-            }, {
+            },
+            {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
-            }, {
+            },
+            {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
             }
