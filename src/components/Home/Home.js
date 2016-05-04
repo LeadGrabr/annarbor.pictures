@@ -5,19 +5,14 @@ import { BottomBar, Page, GoogleMap } from 'components'
 import { default as Banner } from './Banner'
 import { default as Gallery } from '@leadgrabr/gallery'
 import { default as Testimonials } from '@leadgrabr/testimonials'
-import { default as headshotOne } from './headshot-one.jpg'
-import { default as headshotTwo } from './headshot-two.jpg'
 import { default as BrandBadges } from '@leadgrabr/brand-badges'
 import { default as Heart } from 'react-icons/lib/go/heart'
 import { default as Location } from 'react-icons/lib/go/location'
 import { default as AssignmentTurnedIn } from 'react-icons/lib/md/assignment-turned-in'
 import { connect } from 'react-redux'
-
-const testimonialText = `
-    Wisi magna pri ei, equidem tibique an eum, per te quod similique.
-    Ne quas malorum labitur eos, nam ei impetus veritus. Ex dico diceret
-    ancillae duo. Vel legendos pericula ea, per esse rationibus ut.
-`
+import { default as joe } from 'components/Testimonials/joe'
+import { default as john } from 'components/Testimonials/john'
+import { default as barbara } from 'components/Testimonials/barbara'
 
 @connect(({ app: { width } }) => ({ width }))
 
@@ -70,18 +65,22 @@ export default class Home extends Component {
                     </Section>
                     <Section>
                         <Testimonials
+                            imgSize={80}
                             testimonials={[
                                 {
-                                    img: headshotOne,
-                                    name: 'John Appleseed',
-                                    text: testimonialText
+                                    ...john,
+                                    href: '/testimonials/john'
                                 },
                                 {
-                                    img: headshotTwo,
-                                    name: 'Barbara Foo',
-                                    text: testimonialText
+                                    ...barbara,
+                                    href: '/testimonials/barbara'
+                                },
+                                {
+                                    ...joe,
+                                    href: '/testimonials/joe'
                                 }
                             ]}
+                            truncateTextAt={200}
                             width={this.props.width}
                         />
                     </Section>

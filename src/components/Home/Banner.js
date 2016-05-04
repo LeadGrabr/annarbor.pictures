@@ -5,14 +5,13 @@ import { default as weddingSelfie } from './wedding-selfie.jpg'
 import { default as color } from 'color'
 import { default as LeadForm } from '@leadgrabr/lead-form'
 import { connect } from 'redux-await'
-import { constants, createLead } from 'redux/modules/app'
-const { SUBMIT_LEAD } = constants
+import { SUBMIT_LEAD, submitLead } from 'redux/modules/app'
 import { Flex, Box } from 'reflexbox'
 import { Pulse } from 'better-react-spinkit'
 
 @connect(
     ({ app: { width } }) => ({ width }),
-    { submit: createLead }
+    { submit: submitLead }
 )
 
 export default class HomeBanner extends Component {
